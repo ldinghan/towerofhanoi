@@ -73,6 +73,7 @@ h1 {
 	margin: 10px;
 	width: 30%;
 	height: 100%;
+	cursor: pointer;
 }
 
 .selected {
