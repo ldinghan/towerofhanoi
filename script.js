@@ -12,6 +12,7 @@ const canvases = [canvas1,canvas2,canvas3];
 const contexts = [context1,context2,context3];
 const startBtn = document.querySelector('#startBtn');
 const stepCounter = document.querySelector(".counter");
+const highScoreText = document.querySelector(".highscore");
 const WIDTH = 181;
 const HEIGHT = 176;
 const BLOCK_COLORS = ['red','green','white','blue','purple'];
@@ -24,6 +25,7 @@ let stack3 = []
 let steps = 0
 let stacks = [stack1, stack2, stack3];
 let selectedStack;
+let highscore = 0;
 let gameStarted = false;
 
 function draw_blocks() {
@@ -95,7 +97,14 @@ startBtn.addEventListener('click', function(e) {
 
 function check_win() {
 	if (stack3.length === 5) {
-		alert(`congratulations! you won! you took ${steps} moves!`)
+		if (highscore === 0) {
+			highscore = steps
+		} else {
+			highscore = Math.min(highscore, steps)
+		}
+		sessionStorage.setItem('highscore',highscore);
+		alert(`congratulations! you won! you took ${steps} moves! Your best score is ${sessionStorage.getItem('highscore')}`)
+		highScoreText.innerText = `Highscore: ${highscore}`
 		start()
 	}
 }
