@@ -80,6 +80,10 @@ h1 {
 	background-color: lightgreen;
 }
 
+button {
+	margin: 10px;
+}
+
 .counter {
 	font-size: 20px;
 	text-align: center;
