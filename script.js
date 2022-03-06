@@ -14,6 +14,7 @@ const startBtn = document.querySelector('#startBtn');
 const stepCounter = document.querySelector(".counter");
 const WIDTH = 181;
 const HEIGHT = 176;
+const BLOCK_COLORS = ['red','green','white','blue','purple'];
 
 let selected = '';
 let selectedCanvas = '';
@@ -27,18 +28,24 @@ let gameStarted = false;
 
 function draw_blocks() {
 	if (stack1.length !== 0){
-		for (let i=0; i<= stack1.length; i++) {
+		for (let i=0; i< stack1.length+1; i++) {
+			context1.fillStyle = BLOCK_COLORS[stack1[stack1.length-i]-1]
 			context1.fillRect((WIDTH-(stack1[stack1.length-i]*28))/2, HEIGHT-((stack1.length+1)*30)+(i*30), stack1[stack1.length-i]*28,29)
+			context1.strokeRect((WIDTH-(stack1[stack1.length-i]*28))/2, HEIGHT-((stack1.length+1)*30)+(i*30), stack1[stack1.length-i]*28,29)
 		}
 	}
 	if (stack2.length !== 0){
-		for (let i=0; i<= stack2.length; i++) {
+		for (let i=0; i< stack2.length+1; i++) {
+			context2.fillStyle = BLOCK_COLORS[stack2[stack2.length-i]-1]
 			context2.fillRect((WIDTH-(stack2[stack2.length-i]*28))/2, HEIGHT-((stack2.length+1)*30)+(i*30), stack2[stack2.length-i]*28,29)
+			context2.strokeRect((WIDTH-(stack2[stack2.length-i]*28))/2, HEIGHT-((stack2.length+1)*30)+(i*30), stack2[stack2.length-i]*28,29)
 		}
 	}
 	if (stack3.length !== 0){
-		for (let i=0; i<= stack3.length; i++) {
+		for (let i=0; i< stack3.length+1; i++) {
+			context3.fillStyle = BLOCK_COLORS[stack3[stack3.length-i]-1]
 			context3.fillRect((WIDTH-(stack3[stack3.length-i]*28))/2, HEIGHT-((stack3.length+1)*30)+(i*30), stack3[stack3.length-i]*28,29)
+			context3.strokeRect((WIDTH-(stack3[stack3.length-i]*28))/2, HEIGHT-((stack3.length+1)*30)+(i*30), stack3[stack3.length-i]*28,29)
 		}
 	}
 
