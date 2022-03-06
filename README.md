@@ -6,3 +6,5 @@ Features:
 - Counts the number of steps taken to transfer all rings from the first stick to the last stick
 - Accessible restart button to restart the rings
 - Highlighted background upon selection of a stick
+- Coloured rings to easily distinguish between rings
+- Displayable session highscore
